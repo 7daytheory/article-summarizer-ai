@@ -11,3 +11,4 @@ browser history storage
 ## Packages
 Vite
 Redux Toolkit
+TailwindCSS (using Vite) - https://tailwindcss.com/docs/guides/vite
