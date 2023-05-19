@@ -34,7 +34,12 @@ const Demo = () => {
                 ➔
                 </button>
             </form>
+
+            {/* Browser URL History */}
+
         </div>
+
+        {/* Display Results */}
     </section>
   )
 }
