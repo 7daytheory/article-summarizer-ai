@@ -7,3 +7,7 @@ Modern User Interface
 Connection to OpenAIs model
 Copy to clipboard
 browser history storage
+
+## Packages
+Vite
+Redux Toolkit
