@@ -1,12 +1,13 @@
-# custom-ai
-Building a custom AI from scratch
+# Summarize API
+### Building a custom AI from scratch
 
 # Building a article summarizer
-Summarize articles using Sumz (Chat GPT-4)
-Modern User Interface
-Connection to OpenAIs model
-Copy to clipboard
-browser history storage
+<ul>
+<li>Summarize articles using Sumz (Chat GPT-4)</li>
+<li>Connection to OpenAIs model (https://rapidapi.com/hub)</li>
+<li>Copy to clipboard</li>
+<li>Browser history storage using localstorage</li>
+</ul>
 
 ## Packages
 Vite
