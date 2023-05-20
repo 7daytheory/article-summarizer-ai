@@ -34,4 +34,9 @@ If this option is provided, it should contain all the middleware functions you w
 If not provided, configureStore will call getDefaultMiddleware and use the array of middleware functions it returns.
 Where you wish to add onto or customize the default middleware, you may pass a callback function that will receive getDefaultMiddleware as its argument, and should return a middleware array.
 
+### Endpoints
+This overload accepts a callback function that receives a builder object as its argument. That builder provides addCase, addMatcher and addDefaultCase functions that may be called to define what actions this reducer will handle.
+
+The recommended way of using createReducer is the builder callback notation, as it works best with TypeScript and most IDEs.
+
 
