@@ -13,6 +13,30 @@
 Vite
 Redux Toolkit
 TailwindCSS (using Vite) - https://tailwindcss.com/docs/guides/vite
+React-redux
 
 ## Tailwind Overview
-https://tailwindcss.com/ (scroll down a bit)
+https://tailwindcss.com/
+
+## Configuring Store Walthrough
+https://redux-toolkit.js.org/api/configureStore
+Configuring a store
+Store is a global state that saves the entire info from the application
+You don't need the entire state, so you can reduce is : in the case of this application we are just storing the articleApi
+
+### Reducers
+If this is a single function, it will be directly used as the root reducer for the store.
+If it is an object of slice reducers, like {users : usersReducer, posts : postsReducer}, configureStore will automatically create the root reducer by passing this object to the Redux combineReducers utility.
+
+### Middleware
+An optional array of Redux middleware functions
+If this option is provided, it should contain all the middleware functions you want added to the store. configureStore will automatically pass those to applyMiddleware.
+If not provided, configureStore will call getDefaultMiddleware and use the array of middleware functions it returns.
+Where you wish to add onto or customize the default middleware, you may pass a callback function that will receive getDefaultMiddleware as its argument, and should return a middleware array.
+
+### Endpoints
+This overload accepts a callback function that receives a builder object as its argument. That builder provides addCase, addMatcher and addDefaultCase functions that may be called to define what actions this reducer will handle.
+
+The recommended way of using createReducer is the builder callback notation, as it works best with TypeScript and most IDEs.
+
+
