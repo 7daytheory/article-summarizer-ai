@@ -7,6 +7,7 @@ import {copy, linkIcon, loader, tick} from '../assets'
 import { useLazyGetSummaryQuery } from '../services/article'
 
 const Summary = () => {
+
     //Setting State
     const [article, setArticle] = useState({
         url: '',
@@ -16,6 +17,16 @@ const Summary = () => {
     const [allArticles, setAllArticles] = useState([]);
     
     const [getSummary, {error, isFetching}] = useLazyGetSummaryQuery();
+
+    useEffect(() => {
+        const localStorageArticles = JSON.parse(
+            localStorage.getItem('articles')
+        )
+
+        if(localStorageArticles) {
+            setAllArticles(localStorageArticles)
+        }
+    }, []);
 
     //Submit
     const handleSubmit = async (e) => {
@@ -31,14 +42,12 @@ const Summary = () => {
             setArticle(newArticle);
             setAllArticles(updateAllArticles);
 
-            console.log(newArticle);
-            console.log(allArticles);
+            localStorage.setItem('articles', JSON.stringify(updateAllArticles))
         }
     }
 
   return (
     <section className="mt-16 w-full max-w-xl">
-        {/* Search */}
         <div className="flex flex-col w-full gap-2">
             <form
                 className="relative flex justify-center items-center"
@@ -68,11 +77,7 @@ const Summary = () => {
                 </button>
             </form>
 
-            {/* Browser URL History */}
-
         </div>
-
-        {/* Display Results */}
     </section>
   )
 }
