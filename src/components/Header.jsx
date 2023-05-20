@@ -1,7 +1,7 @@
 import React from 'react'
 import { logo } from '../assets';
 
-const Hero = () => {
+const Header = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
         <nav className="flex justify-between items-center  w-full mb-10 pt-3">
@@ -27,4 +27,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Header
