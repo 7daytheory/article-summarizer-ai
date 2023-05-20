@@ -38,4 +38,11 @@ This overload accepts a callback function that receives a builder object as its 
 
 The recommended way of using createReducer is the builder callback notation, as it works best with TypeScript and most IDEs.
 
+## RapidApi (Article Extractor and Summarizer Api)
+This is an API which extracts news/article body from a URL and uses GPT to summarize the article content. Useful for text mining purposes. (Free for 100 days)
+
+3 Api Endpoints - Post /summarize-text | Get /summarize | Get /extract.
+For this application we will be using /summarize
+
+
 
