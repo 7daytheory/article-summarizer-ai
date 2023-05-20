@@ -13,6 +13,7 @@
 Vite
 Redux Toolkit
 TailwindCSS (using Vite) - https://tailwindcss.com/docs/guides/vite
+React-redux
 
 ## Tailwind Overview
-https://tailwindcss.com/ (scroll down a bit)
+https://tailwindcss.com/
