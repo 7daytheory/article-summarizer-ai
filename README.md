@@ -10,13 +10,12 @@
 </ul>
 
 ## Packages
-Vite
-Redux Toolkit
-TailwindCSS (using Vite) - https://tailwindcss.com/docs/guides/vite
-React-redux
-
-## Tailwind Overview
-https://tailwindcss.com/
+<ul>
+<li>Vite</li>
+<li>Redux Toolkit</li>
+<li>TailwindCSS</li>
+<li>React-redux</li>
+</ul>
 
 ## Configuring Store Walthrough
 https://redux-toolkit.js.org/api/configureStore
