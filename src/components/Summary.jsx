@@ -15,6 +15,7 @@ const Summary = () => {
     })
 
     const [allArticles, setAllArticles] = useState([]);
+    const [copied, setCopied] = useState("");
     
     const [getSummary, {error, isFetching}] = useLazyGetSummaryQuery();
 
@@ -48,6 +49,19 @@ const Summary = () => {
             localStorage.setItem('articles', JSON.stringify(updateAllArticles))
         }
     }
+
+    //Copy Content
+    const handleCopy = (copyUrl) => {
+        setCopied(copyUrl);
+        navigator.clipboard.writeText(copyUrl);
+        setTimeout(() => setCopied(false), 3000);
+      };
+    
+      const handleKeyDown = (e) => {
+        if (e.keyCode === 13) {
+          handleSubmit(e);
+        }
+      };
 
   return (
     <section className="mt-16 w-full max-w-xl">
@@ -87,14 +101,11 @@ const Summary = () => {
                         onClick={() => setArticle(item)}
                         className="link_card"
                     >
-                        <div 
-                        className="copy_btn"
-                            onClick={() => alert('copy test')}
-                        >
+                        <div className='copy_btn' onClick={() => handleCopy(item.url)}>
                             <img
-                                src={copy}
-                                alt="copy_icon"
-                                className="w-[40%] h-[40%] object-contain" 
+                            src={copied === item.url ? tick : copy}
+                            alt={copied === item.url ? "tick_icon" : "copy_icon"}
+                            className='w-[40%] h-[40%] object-contain'
                             />
                         </div>
                         <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>
@@ -102,6 +113,7 @@ const Summary = () => {
                     </p>
                     </div>
                 ))}
+            </div>
             </div>
 
             <div className='my-10 max-w-full flex justify-center items-center'>
