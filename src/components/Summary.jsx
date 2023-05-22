@@ -80,8 +80,8 @@ const Summary = () => {
                 </button>
             </form>
 
-            <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-                {allArticles.reverse.map((item, index) => (
+            <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">               
+            {allArticles.reverse().map((item, index) => (
                     <div
                         key={`link-${index}`}
                         onClick={() => setArticle(item)}
@@ -89,7 +89,7 @@ const Summary = () => {
                     >
                         <div 
                         className="copy_btn"
-                            onClick={() => 'Copy test'}
+                            onClick={() => alert('copy test')}
                         >
                             <img
                                 src={copy}
