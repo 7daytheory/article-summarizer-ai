@@ -24,6 +24,8 @@ const Summary = () => {
             localStorage.getItem('articles')
         )
 
+        console.log(localStorageArticles);
+
         if(localStorageArticles) {
             setAllArticles(localStorageArticles)
         }
@@ -38,15 +40,27 @@ const Summary = () => {
         if(data?.summary) {
             const newArticle = { ...article, summary: data.summary};
 
-            const updateAllArticles = [newArticle, ...allArticles];
+            let duplicateArticle = false;
 
-            setArticle(newArticle);
-            setAllArticles(updateAllArticles);
+            allArticles.map(item => {
+              if(item.url === newArticle.url) {
+                duplicateArticle = true;
+              }
+            })
 
-            console.log(newArticle);
-            console.log(allArticles);
+            if(duplicateArticle) {
+              localStorage.setItem('articles', JSON.stringify(allArticles))
 
-            localStorage.setItem('articles', JSON.stringify(updateAllArticles))
+              setAllArticles(allArticles);
+              setArticle(newArticle);
+            } else {
+              const updateAllArticles = [newArticle, ...allArticles];
+
+              localStorage.setItem('articles', JSON.stringify(updateAllArticles))
+
+              setAllArticles(updateAllArticles);
+              setArticle(newArticle);
+            }
         }
     }
 
@@ -57,6 +71,7 @@ const Summary = () => {
         setTimeout(() => setCopied(false), 3000);
       };
     
+      
       const handleKeyDown = (e) => {
         if (e.keyCode === 13) {
           handleSubmit(e);
