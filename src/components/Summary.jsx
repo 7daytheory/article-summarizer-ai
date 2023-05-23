@@ -24,8 +24,6 @@ const Summary = () => {
             localStorage.getItem('articles')
         )
 
-        console.log(localStorageArticles);
-
         if(localStorageArticles) {
             setAllArticles(localStorageArticles)
         }
@@ -64,6 +62,12 @@ const Summary = () => {
         }
     }
 
+    //Clear Storage - Improve upon later
+   const handleClear = () => {
+      localStorage.removeItem('articles');
+      location.reload();
+    }
+
     //Copy Content
     const handleCopy = (copyUrl) => {
         setCopied(copyUrl);
@@ -80,6 +84,13 @@ const Summary = () => {
 
   return (
     <section className="mt-16 w-full max-w-xl">
+      <div className="mt-0 flex justify-end">
+            <button
+            onClick={handleClear}
+            className="mb-2 bg-white hover:bg-gray-100 text-gray-700 font-semibold py-1 px-2 border border-gray-400 rounded">
+              Clear all
+             </button>
+        </div>
         <div className="flex flex-col w-full gap-2">
             <form
                 className="relative flex justify-center items-center"

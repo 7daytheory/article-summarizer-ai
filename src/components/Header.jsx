@@ -17,12 +17,13 @@ const Header = () => {
         </nav>
 
         <h1 className="head_text">
-            Summarize Articles with <br className="max-md:hidden" />
-            <span className="orange_gradient">OpenAI GPT-4</span>
+            Summarize Articles <br className="max-md:hidden" />
+            <span className="orange_gradient">Using OpenAI</span>
         </h1>
         <h2 className="desc">
-            <strong>Simplify and summarize articles.</strong> Copy and paste an article link and this will summarize the article using open-source software.
+            <strong>Simplify and summarize articles.</strong> Copy and paste an article link and it will return a summary of the article using open-source AI software.
         </h2>
+        <p className="italic flex justify-center mt-2 text-sm">* Not all webpages will work due to unclear text formatting.</p>
     </header>
   )
 }
